@@ -106,18 +106,19 @@
 <body>
 
   <!-- Botón hamburguesa -->
-  <button class="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('active')">
+  <button class="menu-toggle" onclick="document.getElementById('sidebar').classList.toggle('active')" aria-label="Abrir menú">
     <span></span>
     <span></span>
     <span></span>
   </button>
 
-  <!-- Sidebar lateral izquierdo -->
-  <div class="sidebar" id="sidebar">
-    <li><a href="https://gamaku00.github.io/portafolio-base/" target="_blank"></a></li>
-    <li><a href="https://gamaku00.github.io/portafolio-base/" target="_blank">INICIO</a></li>
-    <a href="#galeria">Galería</a>
-    <a href="#contacto">Contacto</a>
+  <!-- Sidebar lateral izquierdo (corregido) -->
+  <div class="sidebar" id="sidebar" aria-label="Navegación principal">
+    <ul class="list-unstyled mb-0">
+      <li><a href="https://gamaku00.github.io/portafolio-base/" target="_blank" rel="noopener noreferrer">INICIO</a></li>
+      <li><a href="#galeria" onclick="document.getElementById('sidebar').classList.remove('active')">Galería</a></li>
+      <li><a href="#contacto" onclick="document.getElementById('sidebar').classList.remove('active')">Contacto</a></li>
+    </ul>
   </div>
 
   <!-- Header -->
@@ -168,22 +169,117 @@
     </div>
   </section>
 
-  <!-- Modales para visualizador -->
-  <div class="modal fade" id="modal1" tabindex="-1"><div class="modal-dialog modal-xl"><div class="modal-content"><div class="modal-body p-0"><img src="image (1).JPG" alt="Foto 1"></div></div></div></div>
-  <div class="modal fade" id="modal2" tabindex="-1"><div class="modal-dialog modal-xl"><div class="modal-content"><div class="modal-body p-0"><img src="image (2).JPG" alt="Foto 2"></div></div></div></div>
-  <div class="modal fade" id="modal3" tabindex="-1"><div class="modal-dialog modal-xl"><div class="modal-content"><div class="modal-body p-0"><img src="image (3).JPG" alt="Foto 3"></div></div></div></div>
-  <div class="modal fade" id="modal4" tabindex="-1"><div class="modal-dialog modal-xl"><div class="modal-content"><div class="modal-body p-0"><img src="image (4).JPG" alt="Foto 4"></div></div></div></div>
-  <div class="modal fade" id="modal5" tabindex="-1"><div class="modal-dialog modal-xl"><div class="modal-content"><div class="modal-body p-0"><img src="image (5).JPG" alt="Foto 5"></div></div></div></div>
-  <div class="modal fade" id="modal6" tabindex="-1"><div class="modal-dialog modal-xl"><div class="modal-content"><div class="modal-body p-0"><img src="image (6).JPG" alt="Foto 6"></div></div></div></div>
-  <div class="modal fade" id="modal7" tabindex="-1"><div class="modal-dialog modal-xl"><div class="modal-content"><div class="modal-body p-0"><img src="image (7).JPG" alt="Foto 7"></div></div></div></div>
-  <div class="modal fade" id="modal8" tabindex="-1"><div class="modal-dialog modal-xl"><div class="modal-content"><div class="modal-body p-0"><img src="image (8).JPG" alt="Foto 8"></div></div></div></div>
-  <div class="modal fade" id="modal9" tabindex="-1"><div class="modal-dialog modal-xl"><div class="modal-content"><div class="modal-body p-0"><img src="image (9).JPG" alt="Foto 9"></div></div></div></div>
-  <div class="modal fade" id="modal10" tabindex="-1"><div class="modal-dialog modal-xl"><div class="modal-content"><div class="modal-body p-0"><img src="image (10).jpg" alt="Foto 10"></div></div></div></div>
-  <div class="modal fade" id="modal11" tabindex="-1"><div class="modal-dialog modal-xl"><div class="modal-content"><div class="modal-body p-0"><img src="image (11).jpg" alt="Foto 11"></div></div></div></div>
-  <div class="modal fade" id="modal12" tabindex="-1"><div class="modal-dialog modal-xl"><div class="modal-content"><div class="modal-body p-0"><img src="image (12).jpg" alt="Foto 12"></div></div></div></div>
+  <!-- Modales para visualizador (corregidos/cerrados correctamente) -->
+  <div class="modal fade" id="modal1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content position-relative">
+        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        <div class="modal-body p-0"><img src="image (1).JPG" alt="Foto 1" class="img-fluid"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content position-relative">
+        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        <div class="modal-body p-0"><img src="image (2).JPG" alt="Foto 2" class="img-fluid"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content position-relative">
+        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        <div class="modal-body p-0"><img src="image (3).JPG" alt="Foto 3" class="img-fluid"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal4" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content position-relative">
+        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        <div class="modal-body p-0"><img src="image (4).JPG" alt="Foto 4" class="img-fluid"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal5" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content position-relative">
+        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        <div class="modal-body p-0"><img src="image (5).JPG" alt="Foto 5" class="img-fluid"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal6" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content position-relative">
+        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        <div class="modal-body p-0"><img src="image (6).JPG" alt="Foto 6" class="img-fluid"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal7" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content position-relative">
+        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        <div class="modal-body p-0"><img src="image (7).JPG" alt="Foto 7" class="img-fluid"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal8" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content position-relative">
+        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        <div class="modal-body p-0"><img src="image (8).JPG" alt="Foto 8" class="img-fluid"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal9" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content position-relative">
+        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        <div class="modal-body p-0"><img src="image (9).JPG" alt="Foto 9" class="img-fluid"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal10" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content position-relative">
+        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        <div class="modal-body p-0"><img src="image (10).jpg" alt="Foto 10" class="img-fluid"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal11" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content position-relative">
+        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        <div class="modal-body p-0"><img src="image (11).jpg" alt="Foto 11" class="img-fluid"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal12" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content position-relative">
+        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        <div class="modal-body p-0"><img src="image (12).jpg" alt="Foto 12" class="img-fluid"></div>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
-  <footer>
+  <footer id="contacto">
     &copy; 2025 Gamaku. Todos los derechos reservados.
   </footer>
 
